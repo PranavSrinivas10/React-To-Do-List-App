@@ -20,7 +20,7 @@ function TodoWrapper() {
         if (!value || /^\s*$/.test(value)) {
             return;
         }
-        const curTime = new Date().toLocaleTimeString()
+        const curTime = d.toLocaleTimeString([],{hour12: false, hour: "2-digit", minute: "2-digit"})
         setTodos([...todos, {id: uuidv4(), task: value, completed: false, isEditing: false, time: curTime}])        
     }
 
@@ -37,7 +37,7 @@ function TodoWrapper() {
     }
 
     const editTodo = (value,task_id) => {
-        const newTime = new Date().toLocaleTimeString()
+        const newTime = d.toLocaleTimeString([],{hour12: false, hour: "2-digit", minute: "2-digit"})
         setTodos(todos.map(todo => (todo.id === task_id) ? ({...todo, task: value, isEditing: !todo.isEditing, time: newTime}) : todo))
     }
 

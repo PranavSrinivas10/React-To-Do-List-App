@@ -8,6 +8,9 @@ function Todo({task, toggleComplete, deleteTask, editTask}) {
             {task.task}
         </p>
         <div>
+            {task.time}
+        </div>
+        <div>
             <FiEdit onClick={() => editTask(task.id)}/>
             <FiTrash onClick={() => deleteTask(task.id)} className='fitrash'/>
         </div>

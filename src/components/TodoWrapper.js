@@ -79,21 +79,23 @@ function TodoWrapper() {
 
   return (
     <div className='TodoWrapper'>
-        <h5 className='date'>{curDate}, {curDay} </h5>
-        <br></br>
-        <br></br>
-        <h1>To-Do List</h1>
+        <h5 className='date'>
+            {curDate}, {curDay} 
+        </h5>
+        <h1>
+            To-Do List
+        </h1>
         <TodoForm addTask={addTask}/>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between"}}>
-        <button className='btn-all' onClick={setFilterAll}>
-          All
-        </button>
-        <button className='btn-complete' onClick={setFilterComplete}>
-          Completed
-        </button>
-        <button className='btn-incomplete' onClick={setFilterIncomplete}>
-          Incomplete
-        </button>
+            <button className='btn-all' onClick={setFilterAll}>
+                All
+            </button>
+            <button className='btn-complete' onClick={setFilterComplete}>
+                Completed
+            </button>
+            <button className='btn-incomplete' onClick={setFilterIncomplete}>
+                Incomplete
+            </button>
         </div>
         {todos.filter(myFilter).map(showTodos)}
     </div>

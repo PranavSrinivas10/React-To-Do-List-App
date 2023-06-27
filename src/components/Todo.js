@@ -3,8 +3,8 @@ import {FiEdit, FiTrash} from 'react-icons/fi'
 
 function Todo({task, toggleComplete, deleteTask, editTask}) {
   return (
-    <div className='Todo'>
-        <p onClick={() => toggleComplete(task.id)} className={`${task.completed ? 'completed' : ""}`}>
+    <div className={`${task.completed ? 'Todo-complete' : 'Todo'}`}>
+        <p onClick={() => toggleComplete(task.id)}>
             {task.task}
         </p>
         <div>
